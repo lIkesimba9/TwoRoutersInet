@@ -1,0 +1,596 @@
+version 2
+run General-0-20200906-15:00:33-10617
+attr configname General
+attr datetime 20200906-15:00:33
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TwoRouter
+attr processid 10617
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.fcsMode "\"computed\""
+param **.crcMode "\"computed\""
+param **.networkConfiguratorModule "\"\""
+param *.router0.numEthInterfaces 1
+param *.router0.eth[0].typename "\"ExtLowerEthernetInterface\""
+param *.router0.eth[0].device "\"veth0\""
+param *.router1.numEthInterfaces 1
+param *.router1.eth[0].typename "\"ExtLowerEthernetInterface\""
+param *.router1.eth[0].device "\"veth2\""
+param *.router1.eth[0].namespace "\"host1\""
+
+scalar TwoRouter.router0.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar TwoRouter.router0.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar TwoRouter.router0.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TwoRouter.router0.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TwoRouter.router0.ppp[0].ppp.queue packetPopped:count 32
+attr interpolationmode none
+attr title "packet popped, count"
+scalar TwoRouter.router0.ppp[0].ppp.queue packetPopped:sum(packetBytes) 2804
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic TwoRouter.router0.ppp[0].ppp.queue queueingTime:histogram
+field count 32
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	32
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar TwoRouter.router0.ppp[0].ppp.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar TwoRouter.router0.ppp[0].ppp.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar TwoRouter.router0.ppp[0].ppp.queue packetPushed:count 32
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar TwoRouter.router0.ppp[0].ppp.queue packetPushed:sum(packetBytes) 2804
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar TwoRouter.router0.ppp[0].ppp.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar TwoRouter.router0.ppp[0].ppp.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar TwoRouter.router0.ppp[0].ppp.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar TwoRouter.router0.ppp[0].ppp.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar TwoRouter.router0.ppp[0].ppp transmissionState:timeavg 2.0911816436918e-06
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, timeavg"
+scalar TwoRouter.router0.ppp[0].ppp rxPkOk:count 9136
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar TwoRouter.router0.ppp[0].ppp rxPkOk:sum(packetBytes) 5107287
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar TwoRouter.router0.ppp[0].ppp txPk:count 32
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar TwoRouter.router0.ppp[0].ppp txPk:sum(packetBytes) 3028
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar TwoRouter.router0.ppp[0].ppp rcvdPkFromHl:count 32
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar TwoRouter.router0.ppp[0].ppp rcvdPkFromHl:sum(packetBytes) 2804
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar TwoRouter.router0.ppp[0].ppp passedUpPk:count 9136
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TwoRouter.router0.ppp[0].ppp passedUpPk:sum(packetBytes) 5043335
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TwoRouter.router0.ppp[0].ppp packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar TwoRouter.router0.ppp[0].ppp packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar TwoRouter.router0.ppp[0].ppp packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar TwoRouter.router0.ppp[0].ppp packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar TwoRouter.router0.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar TwoRouter.router0.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar TwoRouter.router0.eth[0].encap decapPk:count 34
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar TwoRouter.router0.eth[0].encap decapPk:sum(packetBytes) 2952
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar TwoRouter.router0.eth[0].encap encapPk:count 9138
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar TwoRouter.router0.eth[0].encap encapPk:sum(packetBytes) 5043391
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar TwoRouter.router0.eth[0].socket packetReceived:count 34
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar TwoRouter.router0.eth[0].socket packetReceived:sum(packetBytes) 3564
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar TwoRouter.router0.eth[0].socket packetSent:count 9138
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar TwoRouter.router0.eth[0].socket packetSent:sum(packetBytes) 5207875
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar TwoRouter.router0.eth[0].socket packetReceivedFromUpper:count 9138
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar TwoRouter.router0.eth[0].socket packetReceivedFromUpper:sum(packetBytes) 5207875
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar TwoRouter.router0.eth[0].socket packetSentFromUpper:count 34
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets sent to higher layer, count"
+scalar TwoRouter.router0.eth[0].socket packetSentFromUpper:sum(packetBytes) 3564
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets sent to higher layer, sum(packetBytes)"
+scalar TwoRouter.router0.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar TwoRouter.router0.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar TwoRouter.router0.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar TwoRouter.router0.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar TwoRouter.router0.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar TwoRouter.router0.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar TwoRouter.router0.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar TwoRouter.router0.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar TwoRouter.router0.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar TwoRouter.router0.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar TwoRouter.router0.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar TwoRouter.router0.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar TwoRouter.router0.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar TwoRouter.router0.ipv4.arp arpResolutionCompleted:count 2
+attr title "ARP completed resolutions, count"
+scalar TwoRouter.router0.ipv4.arp arpResolutionInitiated:count 0
+attr title "ARP initiated resolutions, count"
+scalar TwoRouter.router0.ipv4.arp arpReplySent:count 2
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar TwoRouter.router0.ipv4.arp arpReplySent:sum(packetBytes) 56
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar TwoRouter.router0.ipv4.arp arpRequestSent:count 0
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar TwoRouter.router0.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar TwoRouter.router1.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar TwoRouter.router1.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar TwoRouter.router1.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TwoRouter.router1.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TwoRouter.router1.ppp[0].ppp.queue packetPopped:count 9136
+attr interpolationmode none
+attr title "packet popped, count"
+scalar TwoRouter.router1.ppp[0].ppp.queue packetPopped:sum(packetBytes) 5043335
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic TwoRouter.router1.ppp[0].ppp.queue queueingTime:histogram
+field count 9136
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	9136
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar TwoRouter.router1.ppp[0].ppp.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar TwoRouter.router1.ppp[0].ppp.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar TwoRouter.router1.ppp[0].ppp.queue packetPushed:count 9136
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar TwoRouter.router1.ppp[0].ppp.queue packetPushed:sum(packetBytes) 5043335
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar TwoRouter.router1.ppp[0].ppp.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar TwoRouter.router1.ppp[0].ppp.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar TwoRouter.router1.ppp[0].ppp.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar TwoRouter.router1.ppp[0].ppp.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar TwoRouter.router1.ppp[0].ppp transmissionState:timeavg 0.0035271680394536
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, timeavg"
+scalar TwoRouter.router1.ppp[0].ppp rxPkOk:count 32
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar TwoRouter.router1.ppp[0].ppp rxPkOk:sum(packetBytes) 3028
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar TwoRouter.router1.ppp[0].ppp txPk:count 9136
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar TwoRouter.router1.ppp[0].ppp txPk:sum(packetBytes) 5107287
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar TwoRouter.router1.ppp[0].ppp rcvdPkFromHl:count 9136
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar TwoRouter.router1.ppp[0].ppp rcvdPkFromHl:sum(packetBytes) 5043335
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar TwoRouter.router1.ppp[0].ppp passedUpPk:count 32
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TwoRouter.router1.ppp[0].ppp passedUpPk:sum(packetBytes) 2804
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TwoRouter.router1.ppp[0].ppp packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar TwoRouter.router1.ppp[0].ppp packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar TwoRouter.router1.ppp[0].ppp packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar TwoRouter.router1.ppp[0].ppp packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar TwoRouter.router1.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar TwoRouter.router1.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar TwoRouter.router1.eth[0].encap decapPk:count 9139
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar TwoRouter.router1.eth[0].encap decapPk:sum(packetBytes) 5052530
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar TwoRouter.router1.eth[0].encap encapPk:count 35
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar TwoRouter.router1.eth[0].encap encapPk:sum(packetBytes) 2888
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar TwoRouter.router1.eth[0].socket packetReceived:count 9139
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar TwoRouter.router1.eth[0].socket packetReceived:sum(packetBytes) 5217032
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar TwoRouter.router1.eth[0].socket packetSent:count 35
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar TwoRouter.router1.eth[0].socket packetSent:sum(packetBytes) 3518
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar TwoRouter.router1.eth[0].socket packetReceivedFromUpper:count 35
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar TwoRouter.router1.eth[0].socket packetReceivedFromUpper:sum(packetBytes) 3518
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar TwoRouter.router1.eth[0].socket packetSentFromUpper:count 9139
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets sent to higher layer, count"
+scalar TwoRouter.router1.eth[0].socket packetSentFromUpper:sum(packetBytes) 5217032
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets sent to higher layer, sum(packetBytes)"
+scalar TwoRouter.router1.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar TwoRouter.router1.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar TwoRouter.router1.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar TwoRouter.router1.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar TwoRouter.router1.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar TwoRouter.router1.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar TwoRouter.router1.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar TwoRouter.router1.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar TwoRouter.router1.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar TwoRouter.router1.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar TwoRouter.router1.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar TwoRouter.router1.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar TwoRouter.router1.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar TwoRouter.router1.ipv4.arp arpResolutionCompleted:count 3
+attr title "ARP completed resolutions, count"
+scalar TwoRouter.router1.ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar TwoRouter.router1.ipv4.arp arpReplySent:count 2
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar TwoRouter.router1.ipv4.arp arpReplySent:sum(packetBytes) 56
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar TwoRouter.router1.ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar TwoRouter.router1.ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+

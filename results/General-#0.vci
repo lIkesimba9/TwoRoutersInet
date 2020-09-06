@@ -1,0 +1,189 @@
+file 3847459 1599393754                                         
+version 2
+run General-0-20200906-15:00:33-10617
+attr configname General
+attr datetime 20200906-15:00:33
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TwoRouter
+attr processid 10617
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.fcsMode "\"computed\""
+param **.crcMode "\"computed\""
+param **.networkConfiguratorModule "\"\""
+param *.router0.numEthInterfaces 1
+param *.router0.eth[0].typename "\"ExtLowerEthernetInterface\""
+param *.router0.eth[0].device "\"veth0\""
+param *.router1.numEthInterfaces 1
+param *.router1.eth[0].typename "\"ExtLowerEthernetInterface\""
+param *.router1.eth[0].device "\"veth2\""
+param *.router1.eth[0].namespace "\"host1\""
+
+vector 0 TwoRouter.router0.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 1 TwoRouter.router1.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 2 TwoRouter.router0.eth[0].socket packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 3 TwoRouter.router0.eth[0].socket packetSentFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets sent to higher layer, vector(packetBytes)"
+vector 4 TwoRouter.router0.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 5 TwoRouter.router0.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 6 TwoRouter.router0.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 7 TwoRouter.router0.eth[0].socket packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 8 TwoRouter.router0.eth[0].socket packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 9 TwoRouter.router0.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 10 TwoRouter.router0.ppp[0].ppp.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 11 TwoRouter.router0.ppp[0].ppp.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 12 TwoRouter.router0.ppp[0].ppp.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 13 TwoRouter.router0.ppp[0].ppp.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 14 TwoRouter.router0.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 15 TwoRouter.router1.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 16 TwoRouter.router1.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 17 TwoRouter.router1.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 18 TwoRouter.router1.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 19 TwoRouter.router1.eth[0].socket packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 20 TwoRouter.router1.eth[0].socket packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 21 TwoRouter.router1.eth[0].socket packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 22 TwoRouter.router1.eth[0].socket packetSentFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets sent to higher layer, vector(packetBytes)"
+vector 23 TwoRouter.router1.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 24 TwoRouter.router1.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 25 TwoRouter.router1.ppp[0].ppp.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 26 TwoRouter.router1.ppp[0].ppp.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 27 TwoRouter.router1.ppp[0].ppp.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 28 TwoRouter.router1.ppp[0].ppp.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 29 TwoRouter.router1.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 30 TwoRouter.router0.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 31 TwoRouter.router0.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 32 TwoRouter.router1.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+0	6853 1387 0 73354 0 81.474448816 65 0 1 32 32
+1	8240 414454 0 73362 0 81.47610466 18273 0 1 9136 9136
+2	422694 769 1 73341 4.803068692 81.474442816 34 64 250 3564 464620
+3	423463 769 1 73341 4.803068692 81.474442816 34 64 250 3564 464620
+4	424232 769 2 73342 4.803068692 81.474442816 34 46 232 2952 347332
+5	425001 43 3 35680 4.803068692 41.855641368 2 28 28 56 1568
+6	425044 223473 4 73364 4.803068692 81.47610466 9138 28 1428 5043391 3754833417
+7	648517 223532 5 73365 4.803068692 81.47610466 9138 46 1446 5207875 3939356205
+8	872049 223532 5 73365 4.803068692 81.47610466 9138 46 1446 5207875 3939356205
+9	1095581 726 8 73346 4.846247986 81.474442816 32 32 232 2804 338732
+10	1096307 758 8 73346 4.846247986 81.474442816 32 32 232 2804 338732
+11	1097065 1442 8 73346 4.846247986 81.474442816 64 0 1 32 32
+12	1098507 758 8 73346 4.846247986 81.474442816 32 32 232 2804 338732
+13	1099265 721 8 73346 4.846247986 81.474442816 32 0 0 0 0
+14	1099986 758 8 73346 4.846247986 81.474442816 32 39 239 3028 379556
+15	1100744 758 9 73353 4.846253346 81.474448816 32 39 239 3028 379556
+16	1101502 758 9 73353 4.846253346 81.474448816 32 32 232 2804 338732
+17	1102260 21 11 11 4.846253346 4.846253346 1 28 28 28 784
+18	1102281 829 12 73356 4.846253346 81.474448816 35 28 232 2888 341084
+19	1103110 829 13 73357 4.846253346 81.474448816 35 46 250 3518 456392
+20	1103939 829 13 73357 4.846253346 81.474448816 35 46 250 3518 456392
+21	1104768 232706 13 73357 4.848616755 81.47609642 9139 64 1446 5217032 3940487352
+22	1337474 232706 13 73357 4.848616755 81.47609642 9139 64 1446 5217032 3940487352
+23	1570180 232647 14 73358 4.848616755 81.47609642 9139 46 1428 5052530 3755635236
+24	1802827 232578 20 73360 4.849474957 81.47609642 9136 40 1428 5043335 3754831849
+25	2035405 232578 20 73360 4.849474957 81.47609642 9136 40 1428 5043335 3754831849
+26	2267983 432732 20 73360 4.849474957 81.47609642 18272 0 1 9136 9136
+27	2700715 232578 20 73360 4.849474957 81.47609642 9136 40 1428 5043335 3754831849
+28	2933293 216366 20 73360 4.849474957 81.47609642 9136 0 0 0 0
+29	3149659 232600 20 73360 4.849474957 81.47609642 9136 47 1435 5107287 3825886203
+30	3382259 232586 21 73361 4.849480317 81.47610466 9136 47 1435 5107287 3825886203
+31	3614845 232564 21 73361 4.849480317 81.47610466 9136 40 1428 5043335 3754831849
+32	3847409 49 25219 52027 31.10824493 58.495354236 2 28 28 56 1568
+
